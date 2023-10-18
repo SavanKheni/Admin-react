@@ -12,7 +12,7 @@ const Dashboard = () => {
           <Totalcost />
           <Transastionhistory />
         </div>
-        <div className="w-[20%]">
+        <div className="w-[24%]">
           <Rightsidebar />
         </div>
       </div>

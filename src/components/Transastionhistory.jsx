@@ -1,117 +1,196 @@
-import { Space, Table, Tag, Dropdown } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import React from "react";
+import {
+  Space,
+  Table,
+  Button,
+  Dropdown,
+  message,
+  Tag,
+  Avatar,
+  Tooltip,
+} from "antd";
+import {
+  DownOutlined,
+  UserOutlined,
+  CalendarOutlined,
+} from "@ant-design/icons";
 
 const Transastionhistory = () => {
+  const handleMenuClick = (e) => {
+    message.info("Click on menu item.");
+    console.log("click", e);
+  };
+  const items = [
+    {
+      label: "1st menu item",
+      key: "1",
+      icon: <UserOutlined />,
+    },
+    {
+      label: "2nd menu item",
+      key: "2",
+      icon: <UserOutlined />,
+    },
+    {
+      label: "3rd menu item",
+      key: "3",
+      icon: <UserOutlined />,
+      danger: true,
+    },
+    {
+      label: "4rd menu item",
+      key: "4",
+      icon: <UserOutlined />,
+      danger: true,
+      disabled: true,
+    },
+  ];
+  const menuProps = {
+    items,
+    onClick: handleMenuClick,
+  };
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
-    },
-    {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (_, { tags }) => (
-        <>
-          {tags.map((tag) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
+      title: "Customer",
+      dataIndex: "customer",
+      key: "customer",
+      render: (text) => (
+        <div className="flex gap-4 items-center">
+          <div className="relative">
+            <div className="h-10 w-10 rounded-full bg-slate-100"></div>
+            <div className="h-5 w-5 rounded-full bg-[#1E2125] -bottom-1 -right-1 absolute"></div>
+          </div>
+          <div className="">
+            <h2 className="text-base font-semibold text-[#1E2125]">{text}</h2>
+            <p className="text-[#A9AFB7]">johantosan@gmail.com</p>
+          </div>
+        </div>
       ),
     },
     {
-      title: "Action",
-      key: "action",
-      render: (_, record) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      render: (text) => (
+        <div className="flex gap-2 items-center px-3 py-1 border-[#F1F1F1] border rounded-full w-fit">
+          <div className="h-2 w-2 bg-[#3DC764] rounded-full"></div>
+          {text}
+        </div>
+      ),
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+      render: (text) => <p className="text-[#2C2F32] font-medium">{text}</p>,
+    },
+    {
+      title: "Invoice",
+      key: "invoice",
+      dataIndex: "invoice",
+      render: (text) => <p className="text-[#2C2F32] font-medium">{text}</p>,
+    },
+    {
+      title: "People",
+      key: "people",
+      render: () => (
+        <Avatar.Group>
+          <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1" />
+          <a href="https://ant.design">
+            <Avatar
+              style={{
+                backgroundColor: "#f56a00",
+              }}
+            >
+              K
+            </Avatar>
+          </a>
+          <Tooltip title="Ant User" placement="top">
+            <Avatar
+              style={{
+                backgroundColor: "#87d068",
+              }}
+              icon={<UserOutlined />}
+            />
+          </Tooltip>
+        </Avatar.Group>
       ),
     },
   ];
   const data = [
     {
       key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"],
+      customer: "John Brown",
+      status: "Success",
+      date: "Nov 02, 2021",
+      invoice: "$100,00",
+      people: ["nice", "developer"],
     },
     {
       key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["loser"],
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sydney No. 1 Lake Park",
-      tags: ["cool", "teacher"],
-    },
-  ];
-
-  const items = [
-    {
-      label: <a href="https://www.antgroup.com">1st menu item</a>,
-      key: "0",
-    },
-    {
-      label: <a href="https://www.aliyun.com">2nd menu item</a>,
-      key: "1",
-    },
-    {
-      type: "divider",
-    },
-    {
-      label: "3rd menu item",
-      key: "3",
+      customer: "John Brown",
+      status: "Pending",
+      date: "Nov 02, 2021",
+      invoice: "$100,00",
+      people: ["nice", "developer"],
     },
   ];
   return (
-    <section>
+    <section className="flex flex-col gap-4">
       <div className="flex justify-between flex-wrap">
         <h1 className="text-3xl font-semibold text-[#1E2125]">
           Transastion History
         </h1>
-        <Dropdown
-          menu={{
-            items,
-          }}
-          trigger={["click"]}
-        >
-          <a onClick={(e) => e.preventDefault()}>
-            <Space>
-              Click me
-              <DownOutlined />
-            </Space>
-          </a>
-        </Dropdown>
+        <Space wrap>
+          <Dropdown menu={menuProps} className="month_button">
+            <Button>
+              <Space>
+                <CalendarOutlined />
+                Month
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+        </Space>
       </div>
-      <Table columns={columns} dataSource={data} />;
+      <div className="flex gap-3 flex-wrap">
+        <Space wrap>
+          <Dropdown menu={menuProps} className="shorting_button">
+            <Button>
+              <Space>
+                Recepient
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+        </Space>{" "}
+        <Space wrap>
+          <Dropdown menu={menuProps} className="shorting_button">
+            <Button>
+              <Space>
+                Amount
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+        </Space>{" "}
+        <Space wrap>
+          <Dropdown menu={menuProps} className="shorting_button">
+            <Button>
+              <Space>
+                Status
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+        </Space>
+      </div>
+      <Table
+        columns={columns}
+        dataSource={data}
+        className="transastion_table"
+      />
+      ;
     </section>
   );
 };
