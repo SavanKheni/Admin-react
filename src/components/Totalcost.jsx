@@ -1,4 +1,5 @@
 import React from "react";
+import ChartComponent from "../common/Chart";
 
 const Totalcost = () => {
   return (
@@ -15,6 +16,8 @@ const Totalcost = () => {
           </span>
         </div>
       </div>
+
+      <ChartComponent />
     </div>
   );
 };
