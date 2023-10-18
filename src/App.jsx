@@ -4,9 +4,9 @@ import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
-    <main className="flex">
+    <main className="flex w-full">
       <SideBar />
-      <div className="w-4/5">
+      <div className="desktop:w-4/5">
         <Header />
         <Dashboard />
       </div>

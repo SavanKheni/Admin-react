@@ -52,7 +52,13 @@ export const data = {
 };
 
 const ChartComponent = () => {
-  return <Bar options={options} data={data} />;
+  return (
+    <Bar
+      options={options}
+      data={data}
+      className="w-unset h-unset desktop:!w-[50%] desktop-small:!w-[50%] tablet:!w-[50%] desktop:!h-auto desktop-small:!h-auto tablet:!h-auto"
+    />
+  );
 };
 
 export default ChartComponent;

@@ -58,11 +58,13 @@ const Transastionhistory = () => {
         <div className="flex gap-4 items-center">
           <div className="relative">
             <div className="h-10 w-10 rounded-full bg-slate-100"></div>
-            <div className="h-5 w-5 rounded-full bg-[#1E2125] -bottom-1 -right-1 absolute"></div>
+            <div className="h-5 w-5 rounded-full bg-midnight-blue -bottom-1 -right-1 absolute"></div>
           </div>
           <div className="">
-            <h2 className="text-base font-semibold text-[#1E2125]">{text}</h2>
-            <p className="text-[#A9AFB7]">johantosan@gmail.com</p>
+            <h2 className="text-base font-semibold text-midnight-blue">
+              {text}
+            </h2>
+            <p className="text-gray-500">johantosan@gmail.com</p>
           </div>
         </div>
       ),
@@ -72,8 +74,8 @@ const Transastionhistory = () => {
       dataIndex: "status",
       key: "status",
       render: (text) => (
-        <div className="flex gap-2 items-center px-3 py-1 border-[#F1F1F1] border rounded-full w-fit">
-          <div className="h-2 w-2 bg-[#3DC764] rounded-full"></div>
+        <div className="flex gap-2 items-center px-3 py-1 border-gray-100 border rounded-full w-fit">
+          <div className="h-2 w-2 bg-mint-green rounded-full"></div>
           {text}
         </div>
       ),
@@ -82,13 +84,13 @@ const Transastionhistory = () => {
       title: "Date",
       dataIndex: "date",
       key: "date",
-      render: (text) => <p className="text-[#2C2F32] font-medium">{text}</p>,
+      render: (text) => <p className="text-charcoal font-medium">{text}</p>,
     },
     {
       title: "Invoice",
       key: "invoice",
       dataIndex: "invoice",
-      render: (text) => <p className="text-[#2C2F32] font-medium">{text}</p>,
+      render: (text) => <p className="text-charcoal font-medium">{text}</p>,
     },
     {
       title: "People",
@@ -138,7 +140,7 @@ const Transastionhistory = () => {
   return (
     <section className="flex flex-col gap-4">
       <div className="flex justify-between flex-wrap">
-        <h1 className="text-3xl font-semibold text-[#1E2125]">
+        <h1 className="text-3xl font-semibold text-midnight-blue">
           Transastion History
         </h1>
         <Space wrap>
@@ -190,7 +192,6 @@ const Transastionhistory = () => {
         dataSource={data}
         className="transastion_table"
       />
-      ;
     </section>
   );
 };

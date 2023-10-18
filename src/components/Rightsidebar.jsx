@@ -46,8 +46,8 @@ const Rightsidebar = () => {
   return (
     <>
       <div className="relative">
-        <small className="text-[#6E62E5]">Premium Access</small>
-        <h1 className="font-bold text-[#1E2125] text-3xl">
+        <small className="text-lavender-blue">Premium Access</small>
+        <h1 className="font-bold text-midnight-blue text-3xl">
           Take Back Your Creative
           <br /> Control
         </h1>
@@ -86,7 +86,7 @@ const Rightsidebar = () => {
         >
           <a
             onClick={(e) => e.preventDefault()}
-            className="text-xs text-[#A5ABB3] cursor-pointer"
+            className="text-xs text-gray-300 cursor-pointer"
           >
             <Space>
               The Profesional Platform
@@ -95,7 +95,7 @@ const Rightsidebar = () => {
           </a>
         </Dropdown>
       </div>
-      <div className="border border-[#F5F5F5] rounded-xl p-3 flex justify-between mt-5 text-[#6E62E5]">
+      <div className="border border-gray-100 rounded-3 p-3 flex justify-between mt-5 text-lavender-blue">
         <p className="text-sm">Upgrade Now</p>
         <ArrowRightOutlined />
       </div>
@@ -105,15 +105,15 @@ const Rightsidebar = () => {
           <div className="h-11 w-11 rounded-full bg-slate-100"></div>
         </div>
         <div className="w-full">
-          <h2 className="text-base font-semibold text-[#1E2125]">
+          <h2 className="text-base font-semibold text-midnight-blue">
             Meeting with Client
           </h2>
           <div className="flex justify-between">
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <VideoCameraOutlined />
               <p className=" font-semibold items-center">Google Meet</p>
             </div>
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <FieldTimeOutlined />
               <p className="items-center">03 pm</p>
             </div>
@@ -126,15 +126,15 @@ const Rightsidebar = () => {
           <div className="h-11 w-11 rounded-full bg-slate-100"></div>
         </div>
         <div className="w-full">
-          <h2 className="text-base font-semibold text-[#1E2125]">
+          <h2 className="text-base font-semibold text-midnight-blue">
             Meeting with Client
           </h2>
           <div className="flex justify-between">
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <VideoCameraOutlined />
               <p className=" font-semibold items-center">Google Meet</p>
             </div>
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <FieldTimeOutlined />
               <p className="items-center">03 pm</p>
             </div>
@@ -147,15 +147,15 @@ const Rightsidebar = () => {
           <div className="h-11 w-11 rounded-full bg-slate-100"></div>
         </div>
         <div className="w-full">
-          <h2 className="text-base font-semibold text-[#1E2125]">
+          <h2 className="text-base font-semibold text-midnight-blue">
             Meeting with Client
           </h2>
           <div className="flex justify-between">
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <VideoCameraOutlined />
               <p className=" font-semibold items-center">Google Meet</p>
             </div>
-            <div className="flex gap-1 text-[#A7ADB5] items-center">
+            <div className="flex gap-1 text-gray-500 items-center">
               <FieldTimeOutlined />
               <p className="items-center">03 pm</p>
             </div>

@@ -19,6 +19,6 @@
     padding-right: 20px;
 }
 
-.transastion_table .ant-table-thead tr td {
+.transastion_table .ant-table-thead tr th {
     background-color: unset;
 }
